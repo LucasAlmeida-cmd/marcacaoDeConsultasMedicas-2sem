@@ -255,6 +255,12 @@ const DoctorDashboardScreen: React.FC = () => {
           containerStyle={styles.button as ViewStyle}
           buttonStyle={styles.logoutButton}
         />
+                <Button
+          title="Configurações"
+          onPress={() => navigation.navigate('Settings')}
+          containerStyle={styles.button as ViewStyle}
+          buttonStyle={styles.settingsButton}
+        />
         {selectedAppointment && (
           <AppointmentActionModal
             visible={modalVisible}
@@ -317,6 +323,10 @@ const styles = {
     fontSize: 14,
     fontWeight: '500',
     color: theme.colors.text,
+  },
+    settingsButton: {
+    backgroundColor: theme.colors.secondary,
+    paddingVertical: 12,
   },
 };
 
