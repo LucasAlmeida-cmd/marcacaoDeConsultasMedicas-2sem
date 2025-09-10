@@ -3,21 +3,17 @@ import styled from 'styled-components/native';
 import { Button, ListItem } from 'react-native-elements';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types/navigation';
 import theme from '../styles/theme';
 import Header from '../components/Header';
 import ProfileImagePicker from '../components/ProfileImagePicker';
 import { ViewStyle } from 'react-native';
-
-type ProfileScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Profile'>;
-};
+import { styles } from './styles';
+import { ProfileScreenProps } from './types/ProfileScreenProps';
+import { ProfileCard } from './components/ProfileScreenCard';
+import { useProfile } from './hooks/useProfile';
 
 const ProfileScreen: React.FC = () => {
-  const { user, signOut } = useAuth();
-  const navigation = useNavigation<ProfileScreenProps['navigation']>();
-
+  const { user, signOut, navigation } = useProfile();
   const getRoleText = (role: string) => {
     switch (role) {
       case 'admin':
@@ -37,23 +33,7 @@ const ProfileScreen: React.FC = () => {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Title>Meu Perfil</Title>
 
-        <ProfileCard>
-          <ProfileImagePicker
-            currentImageUri={user?.image}
-            onImageSelected={() => {}} // Read-only na tela de perfil
-            size={120}
-            editable={false}
-          />
-          <Name>{user?.name}</Name>
-          <Email>{user?.email}</Email>
-          <RoleBadge role={user?.role || ''}>
-            <RoleText>{getRoleText(user?.role || '')}</RoleText>
-          </RoleBadge>
-          
-          {user?.role === 'doctor' && (
-            <SpecialtyText>Especialidade: {user?.specialty}</SpecialtyText>
-          )}
-        </ProfileCard>
+        <ProfileCard user={user} getRoleText={getRoleText}/>
 
         <Button
           title="Editar Perfil"
