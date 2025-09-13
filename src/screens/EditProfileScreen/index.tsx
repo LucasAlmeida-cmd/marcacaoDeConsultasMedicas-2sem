@@ -1,12 +1,8 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import { ScrollView, ViewStyle, Alert } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import theme from '../styles/theme';
-import Header from '../components/Header';
+import Header from './../../components/Header';
 import ProfileImagePicker from '../components/ProfileImagePicker';
-import { imageService } from '../services/imageService';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styles } from './styles';
 import { useEditProfileScreen } from './hooks/useEditProfileScreen';
 import { handleImageSelected, handleSaveProfile } from './services/editProfileService';
