@@ -22,12 +22,12 @@ export const styles = {
   },
 };
 
-const Container = styled.View`
+export const Container = styled.View`
   flex: 1;
   background-color: ${theme.colors.background};
 `;
 
-const Title = styled.Text`
+export const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
   color: ${theme.colors.text};
@@ -35,7 +35,7 @@ const Title = styled.Text`
   text-align: center;
 `;
 
-const ProfileCard = styled.View`
+export const ProfileCard = styled.View`
   background-color: ${theme.colors.white};
   border-radius: 8px;
   padding: 20px;
@@ -47,7 +47,7 @@ const ProfileCard = styled.View`
 
 // Avatar removido - agora usamos o ProfileImagePicker
 
-const RoleBadge = styled.View<{ role: string }>`
+export const RoleBadge = styled.View<{ role: string }>`
   background-color: ${(props: { role: string }) => {
     switch (props.role) {
       case 'admin':
@@ -63,7 +63,7 @@ const RoleBadge = styled.View<{ role: string }>`
   margin-top: 10px;
 `;
 
-const RoleText = styled.Text`
+export const RoleText = styled.Text`
   color: ${theme.colors.text};
   font-size: 14px;
   font-weight: 500;
