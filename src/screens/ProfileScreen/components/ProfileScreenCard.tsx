@@ -1,12 +1,20 @@
 import ProfileImagePicker from "../../../components/ProfileImagePicker";
 import { User } from "../../../types/auth";
+import {
+  Card,
+  Name,
+  Email,
+  RoleBadge,
+  RoleText,
+  SpecialtyText,
+} from "./../styles"
 
 type Props = {
   user: User | null;
   getRoleText: (role: string) => string;
 };
 
-const ProfileCard: React.FC<Props> = ({ user, getRoleText }) => {
+export const ProfileCard: React.FC<Props> = ({ user, getRoleText }) => {
   if (!user) return null;
 
   return (

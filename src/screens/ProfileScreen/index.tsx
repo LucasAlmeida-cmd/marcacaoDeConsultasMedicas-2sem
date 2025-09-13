@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import { Button, ListItem } from 'react-native-elements';
-import { useAuth } from '../contexts/AuthContext';
-import { useNavigation } from '@react-navigation/native';
-import theme from '../styles/theme';
-import Header from '../components/Header';
-import ProfileImagePicker from '../components/ProfileImagePicker';
+import Header from './../../components/Header';
 import { ViewStyle } from 'react-native';
-import { styles } from './styles';
-import { ProfileScreenProps } from './types/ProfileScreenProps';
 import { ProfileCard } from './components/ProfileScreenCard';
 import { useProfile } from './hooks/useProfile';
+import {
+  styles,
+  Container,
+  ScrollView,
+  Title,
+} from './styles'
 
 const ProfileScreen: React.FC = () => {
   const { user, signOut, navigation } = useProfile();
