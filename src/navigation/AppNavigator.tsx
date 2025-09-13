@@ -5,16 +5,16 @@ import { useAuth } from '../contexts/AuthContext';
 import { RootStackParamList } from '../types/navigation';
 
 // Screens
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from './../screens/LoginScreen/index';
 import RegisterScreen from '../screens/RegisterScreen';
 import HomeScreen from '../screens/HomeScreen/index';
 import CreateAppointmentScreen from '../screens/CreateAppointmentScreen';
-import ProfileScreen from '../screens/ProfileScreenOFC';
+import ProfileScreen from './../screens/ProfileScreen/index';
 import AdminDashboardScreen from '../screens/AdminDashboardScreen';
 import DoctorDashboardScreen from '../screens/DoctorDashboardScreen';
 import PatientDashboardScreen from '../screens/PatientDashboardScreen';
 
-import EditProfileScreen from '../screens/EditProfileScreen';
+import EditProfileScreen from './../screens/EditProfileScreen/index';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 const Stack = createNativeStackNavigator<RootStackParamList>();
