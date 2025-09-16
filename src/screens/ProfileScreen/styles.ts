@@ -1,16 +1,18 @@
 import { styled } from 'styled-components/native';
 import theme from "../../styles/theme";
 
-const Container = styled.View`
+
+export const Container = styled.View`
   flex: 1;
   background-color: ${theme.colors.background};
 `;
 
-const ScrollView = styled.ScrollView`
+
+export const ScrollView = styled.ScrollView`
   flex: 1;
 `;
 
-const Title = styled.Text`
+export const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
   color: ${theme.colors.text};
@@ -18,7 +20,8 @@ const Title = styled.Text`
   text-align: center;
 `;
 
-const ProfileCard = styled.View`
+
+export const ProfileCard = styled.View`
   background-color: ${theme.colors.background};
   border-radius: 8px;
   padding: 20px;
@@ -30,20 +33,21 @@ const ProfileCard = styled.View`
 
 // Avatar removido - agora usamos o ProfileImagePicker
 
-const Name = styled.Text`
+
+export const Name = styled.Text`
   font-size: 20px;
   font-weight: bold;
   color: ${theme.colors.text};
   margin-bottom: 8px;
 `;
 
-const Email = styled.Text`
+export const Email = styled.Text`
   font-size: 16px;
   color: ${theme.colors.text};
   margin-bottom: 8px;
 `;
 
-const RoleBadge = styled.View<{ role: string }>`
+export const RoleBadge = styled.View<{ role: string }>`
   background-color: ${(props: { role: string }) => {
     switch (props.role) {
       case 'admin':
@@ -59,19 +63,21 @@ const RoleBadge = styled.View<{ role: string }>`
   margin-bottom: 8px;
 `;
 
-const RoleText = styled.Text`
+export const RoleText = styled.Text`
   color: ${theme.colors.text};
   font-size: 14px;
   font-weight: 500;
 `;
 
-const SpecialtyText = styled.Text`
+
+export const SpecialtyText = styled.Text`
   font-size: 16px;
   color: ${theme.colors.text};
   margin-top: 8px;
 `;
 
-const styles = {
+
+export const styles = {
   scrollContent: {
     padding: 20,
   },
@@ -93,7 +99,7 @@ const styles = {
   },
 };
 
-const Card = styled.View`
+export const Card = styled.View`
   align-items: center;
   background-color: ${theme.colors.white};
   border-radius: 12px;
@@ -104,42 +110,4 @@ const Card = styled.View`
   shadow-opacity: 0.1;
   shadow-radius: 6px;
   shadow-offset: 0px 3px;
-`;
-
-const Name = styled.Text`
-  font-size: ${theme.typography.title.fontSize}px;
-  font-weight: ${theme.typography.title.fontWeight};
-  color: ${theme.colors.text};
-  margin-top: ${theme.spacing.medium}px;
-`;
-
-const Email = styled.Text`
-  font-size: ${theme.typography.body.fontSize}px;
-  color: ${theme.colors.text};
-  opacity: 0.7;
-  margin-top: 4px;
-`;
-
-const RoleBadge = styled.View<{ role: string }>`
-  background-color: ${({ role }) =>
-    role === 'admin'
-      ? theme.colors.primary
-      : role === 'doctor'
-      ? theme.colors.success
-      : theme.colors.secondary};
-  padding: 6px 12px;
-  border-radius: 20px;
-  margin-top: ${theme.spacing.medium}px;
-`;
-
-const RoleText = styled.Text`
-  color: white;
-  font-weight: bold;
-`;
-
-const SpecialtyText = styled.Text`
-  font-size: ${theme.typography.body.fontSize}px;
-  color: ${theme.colors.text};
-  margin-top: ${theme.spacing.small}px;
-  opacity: 0.9;
 `;

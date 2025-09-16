@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 import { Input, Button, Text } from 'react-native-elements';
-import { useAuth } from '../contexts/AuthContext';
 import theme from '../styles/theme';
 import { ViewStyle } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types/navigation';
-
-type LoginScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
-};
+import { useLoginScreen } from './hooks/useLoginScreen';
+import {
+  styles,
+  Container,
+  Title,
+  ErrorText
+} from './styles'
 
 const LoginScreen: React.FC = () => {
-  const { signIn } = useAuth();
-  const navigation = useNavigation<LoginScreenProps['navigation']>();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const {
+    signIn,
+    navigation,
+    email, setEmail,
+    password, setPassword,
+    loading, setLoading,
+    error, setError
+  } = useLoginScreen();
 
   const handleLogin = async () => {
     try {
@@ -80,59 +81,5 @@ const LoginScreen: React.FC = () => {
     </Container>
   );
 };
-
-const styles = {
-  input: {
-    marginBottom: 15,
-  },
-  button: {
-    marginTop: 10,
-    width: '100%',
-  },
-  buttonStyle: {
-    backgroundColor: theme.colors.primary,
-    paddingVertical: 12,
-  },
-  registerButton: {
-    marginTop: 10,
-    width: '100%',
-  },
-  registerButtonStyle: {
-    backgroundColor: theme.colors.secondary,
-    paddingVertical: 12,
-  },
-  hint: {
-    marginTop: 20,
-    textAlign: 'center' as const,
-    color: theme.colors.text,
-  },
-  credentials: {
-    marginTop: 10,
-    textAlign: 'center' as const,
-    color: theme.colors.text,
-    fontSize: 12,
-  },
-};
-
-const Container = styled.View`
-  flex: 1;
-  padding: 20px;
-  justify-content: center;
-  background-color: ${theme.colors.background};
-`;
-
-const Title = styled.Text`
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 30px;
-  color: ${theme.colors.text};
-`;
-
-const ErrorText = styled.Text`
-  color: ${theme.colors.error};
-  text-align: center;
-  margin-bottom: 10px;
-`;
 
 export default LoginScreen; 
