@@ -1,10 +1,12 @@
 import { styled } from 'styled-components/native';
 import theme from "../../styles/theme";
 
+
 export const Container = styled.View`
   flex: 1;
   background-color: ${theme.colors.background};
 `;
+
 
 export const ScrollView = styled.ScrollView`
   flex: 1;
@@ -18,6 +20,7 @@ export const Title = styled.Text`
   text-align: center;
 `;
 
+
 export const ProfileCard = styled.View`
   background-color: ${theme.colors.background};
   border-radius: 8px;
@@ -29,6 +32,7 @@ export const ProfileCard = styled.View`
 `;
 
 // Avatar removido - agora usamos o ProfileImagePicker
+
 
 export const Name = styled.Text`
   font-size: 20px;
@@ -65,11 +69,13 @@ export const RoleText = styled.Text`
   font-weight: 500;
 `;
 
+
 export const SpecialtyText = styled.Text`
   font-size: 16px;
   color: ${theme.colors.text};
   margin-top: 8px;
 `;
+
 
 export const styles = {
   scrollContent: {
