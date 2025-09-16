@@ -11,7 +11,7 @@ import HomeScreen from '../screens/HomeScreen/index';
 import CreateAppointmentScreen from '../screens/CreateAppointmentScreen';
 import ProfileScreen from './../screens/ProfileScreen/index';
 import AdminDashboardScreen from '../screens/AdminDashboardScreen';
-import DoctorDashboardScreen from '../screens/DoctorDashboardScreen';
+import DoctorDashboardScreen from '../screens/DoctorDashboardScreen/index';
 import PatientDashboardScreen from '../screens/PatientDashboardScreen';
 
 import EditProfileScreen from './../screens/EditProfileScreen/index';
